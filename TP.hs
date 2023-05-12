@@ -145,3 +145,11 @@ empiezaCon xs = head xs
 -- funcion de RedSocialValida
 redSocialValida :: Redsocial -> Bool
 redSocialValida (us,rs,ps) = usuariosValidos us && relacionesValidas us rs && publicacionesValidas us ps
+
+-- Ejercicio 5, no sabia bien donde ponerlo asi que edite el codigo y lo puse aca, despues lo acomodamos bien. Diganme que les parece o si habria que modificar algo.
+
+estaRobertoCarlos :: RedSocial -> Bool
+estaRobertoCarlos ((x:xs),rs,ps) | cantidadDeAmigos x > 10 = True
+                                 | otherwise = estaRobertoCarlos (xs,rs,ps)
+                                 
+
